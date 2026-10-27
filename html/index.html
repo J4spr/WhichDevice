@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smartphone Finder</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <span class="badge">Smartphone Finder</span>
+
+        <h1>Find the perfect phone for you</h1>
+
+        <p>
+            Answer a few questions about your budget, daily usage,
+            camera needs and preferences.
+        </p>
+    </div>
+</header>
+
+
+<main class="container">
+
+    <form id="phoneForm">
+
+        <!-- =============================
+             QUESTION 1
+        ============================== -->
+
+        <section class="step active">
+
+            <div class="progress">
+                <span>Question 1 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <span class="section-number">01</span>
+
+                <div>
+                    <h2>Budget</h2>
+                    <p>Let's start with how much you want to spend.</p>
+                </div>
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    What is the maximum amount you want to spend on this phone?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="budget" value="under250">
+
+                        <span>
+                            <strong>Under €250</strong>
+                            <small>Basic / Budget</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="budget" value="250-450">
+
+                        <span>
+                            <strong>€250 – €450</strong>
+                            <small>Value / Mid-range sweet spot</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="budget" value="450-750">
+
+                        <span>
+                            <strong>€450 – €750</strong>
+                            <small>Upper mid-range / Near-flagship</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="budget" value="premium">
+
+                        <span>
+                            <strong>Money is no object</strong>
+                            <small>I want premium quality</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation first-navigation">
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 2
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 2 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">01</span>
+
+                <div>
+                    <h2>Budget</h2>
+                    <p>How long should your new phone last?</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    How long do you want to keep this phone before replacing it?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="phone_lifetime" value="1-2">
+
+                        <span>
+                            <strong>1 to 2 years</strong>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="phone_lifetime" value="3-4">
+
+                        <span>
+                            <strong>3 to 4 years</strong>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="phone_lifetime" value="5+">
+
+                        <span>
+                            <strong>5+ years</strong>
+                            <small>Until it literally stops working</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 3
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 3 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">02</span>
+
+                <div>
+                    <h2>Everyday usage</h2>
+                    <p>Tell us what you normally use your phone for.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    What does an average day with your phone look like?
+                </h3>
+
+                <p class="helper-text">
+                    Select all that apply.
+                </p>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="checkbox" name="usage" value="communication">
+
+                        <span>
+                            <strong>Calling, messaging and emails</strong>
+                            <small>WhatsApp, texting and everyday communication</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="checkbox" name="usage" value="social">
+
+                        <span>
+                            <strong>Social media & video</strong>
+                            <small>Instagram, TikTok, YouTube and Netflix</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="checkbox" name="usage" value="gaming">
+
+                        <span>
+                            <strong>Heavy 3D gaming</strong>
+                            <small>Genshin Impact, Call of Duty Mobile...</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="checkbox" name="usage" value="work">
+
+                        <span>
+                            <strong>Work & school multitasking</strong>
+                            <small>Documents, scanning and heavy file transfers</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 4
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 4 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">02</span>
+
+                <div>
+                    <h2>Everyday usage</h2>
+                    <p>Performance and smoothness.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    How sensitive are you to speed and smoothness?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="performance" value="basic">
+
+                        <span>
+                            <strong>Basic performance is enough</strong>
+                            <small>As long as apps open and don't crash.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="performance" value="fast">
+
+                        <span>
+                            <strong>I want a fast phone</strong>
+                            <small>Apps should open instantly and menus should feel fluid.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="performance" value="maximum">
+
+                        <span>
+                            <strong>Top-tier performance</strong>
+                            <small>Zero stutter even with many apps running.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 5
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 5 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">03</span>
+
+                <div>
+                    <h2>Camera needs</h2>
+                    <p>How important is photography to you?</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    How do you typically use the camera?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="camera" value="basic">
+
+                        <span>
+                            <strong>Quick snapshots</strong>
+                            <small>Parking spots, grocery lists, recipes or casual photos.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="camera" value="social">
+
+                        <span>
+                            <strong>Memories & social media</strong>
+                            <small>Family photos, holidays and social media posts.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="camera" value="photography">
+
+                        <span>
+                            <strong>I love photography</strong>
+                            <small>Night shots, concerts, portraits and high-quality video.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 6
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 6 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">03</span>
+
+                <div>
+                    <h2>Camera needs</h2>
+                    <p>Let's talk about zoom.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    Do you care about zooming in from far away?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="zoom" value="no">
+
+                        <span>
+                            <strong>No</strong>
+                            <small>I normally take standard photos.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="zoom" value="maybe">
+
+                        <span>
+                            <strong>Nice to have</strong>
+                            <small>Useful, but not a dealbreaker.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="zoom" value="important">
+
+                        <span>
+                            <strong>Very important</strong>
+                            <small>I want sharp zoom for concerts and distant subjects.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 7
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 7 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">04</span>
+
+                <div>
+                    <h2>Durability</h2>
+                    <p>Battery life matters.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    How often are you away from a charger?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="battery" value="charger-nearby">
+
+                        <span>
+                            <strong>I usually have a charger nearby</strong>
+                            <small>At home, work, school or in the car.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="battery" value="full-day">
+
+                        <span>
+                            <strong>I need a full-day battery</strong>
+                            <small>My phone should comfortably survive the day.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="battery" value="multi-day">
+
+                        <span>
+                            <strong>I want multi-day battery</strong>
+                            <small>I often forget to charge my phone.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 8
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 8 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">04</span>
+
+                <div>
+                    <h2>Durability</h2>
+                    <p>How tough does your phone need to be?</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    Where does your phone spend most of its time?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="durability" value="safe">
+
+                        <span>
+                            <strong>Mostly somewhere safe</strong>
+                            <small>Office, home or inside a safe bag.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="durability" value="drops">
+
+                        <span>
+                            <strong>It gets a rougher life</strong>
+                            <small>Pockets with keys, coins and occasional drops.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="durability" value="outdoors">
+
+                        <span>
+                            <strong>Outdoor environments</strong>
+                            <small>Construction sites, rain, water or harsh conditions.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 9
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 9 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">05</span>
+
+                <div>
+                    <h2>Ergonomics</h2>
+                    <p>Let's find the right size.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    What size phone feels comfortable in your hands?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="size" value="compact">
+
+                        <span>
+                            <strong>Compact</strong>
+                            <small>Easy to use with one hand.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="size" value="standard">
+
+                        <span>
+                            <strong>Standard size</strong>
+                            <small>The average modern smartphone.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="size" value="large">
+
+                        <span>
+                            <strong>As large as possible</strong>
+                            <small>Better for reading and watching videos.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="size" value="none">
+
+                        <span>
+                            <strong>No preference</strong>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 10
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 10 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">05</span>
+
+                <div>
+                    <h2>Ergonomics</h2>
+                    <p>Your current operating system.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    What type of phone are you using right now?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="current_os" value="ios">
+
+                        <span>
+                            <strong>iPhone</strong>
+                            <small>Apple / iOS</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="current_os" value="android">
+
+                        <span>
+                            <strong>Android</strong>
+                            <small>Samsung, Google Pixel, Motorola, Xiaomi...</small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="current_os" value="none">
+
+                        <span>
+                            <strong>I don't know / no preference</strong>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Next →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             QUESTION 11
+        ============================== -->
+
+        <section class="step">
+
+            <div class="progress">
+                <span>Question 11 of 11</span>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="section-header">
+
+                <span class="section-number">05</span>
+
+                <div>
+                    <h2>Ergonomics</h2>
+                    <p>One final question.</p>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h3>
+                    Are you willing to switch operating systems?
+                </h3>
+
+                <div class="options">
+
+                    <label class="option">
+                        <input type="radio" name="switch_os" value="yes">
+
+                        <span>
+                            <strong>Yes</strong>
+                            <small>
+                                Show me whatever fits my budget and needs best.
+                            </small>
+                        </span>
+                    </label>
+
+
+                    <label class="option">
+                        <input type="radio" name="switch_os" value="no">
+
+                        <span>
+                            <strong>No</strong>
+                            <small>
+                                I want to stick with what I already know.
+                            </small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="navigation">
+                <button type="button" class="back-btn">← Back</button>
+                <button type="button" class="next-btn">Continue →</button>
+            </div>
+
+        </section>
+
+
+        <!-- =============================
+             FINAL PAGE
+        ============================== -->
+
+        <section class="step final-step">
+
+            <div class="finish-card">
+
+                <div class="finish-icon">✓</div>
+
+                <span class="finish-label">
+                    Questionnaire complete
+                </span>
+
+                <h2>
+                    Ready to find your phone?
+                </h2>
+
+                <p>
+                    You've answered all the questions.
+                    We can now find the smartphone that best matches
+                    your budget, usage and preferences.
+                </p>
+
+                <div class="final-buttons">
+
+                    <button type="button" class="back-btn">
+                        ← Back
+                    </button>
+
+                    <button type="submit" class="find-btn">
+                        Find my phone →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </form>
+
+</main>
+
+
+<footer>
+    <p>Smartphone Finder</p>
+</footer>
+
+
+<script src="../javascript/script.js"></script>
+</body>
+</html>
