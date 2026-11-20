@@ -915,6 +915,15 @@
 
     </form>
 
+<section id="phone-results" class="phone-results container" hidden aria-live="polite">
+    <div class="results-heading">
+        <h2>Your phone matches</h2>
+        <p id="results-summary"></p>
+        <button type="button" id="edit-answers" class="results-edit">← Change my answers</button>
+    </div>
+    <div id="results-list" class="results-grid"></div>
+    <p class="results-note">Prices are approximate ranges from the supplied list, not live offers. Matching is based on descriptive categories, not verified technical benchmarks. Some models or variants may require availability checks.</p>
+</section>
 </main>
 
 
@@ -944,6 +953,7 @@
     });
 })();
 </script>
+<script src="./javascript/phones.js"></script>
 <script src="./javascript/script.js"></script>
 </body>
 </html>

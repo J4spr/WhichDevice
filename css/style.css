@@ -618,3 +618,18 @@ footer {
 #cookie-overlay[aria-hidden="true"] {
     display: none !important;
 }
+
+/* Recommendation results */
+.phone-results[hidden], #phoneForm[hidden] { display: none !important; }
+.phone-results { padding: 30px 0 70px; }
+.results-heading { margin-bottom: 25px; }
+.results-heading h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 8px; }
+.results-heading p { color: #475569; }
+.results-edit { margin-top: 14px; padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 9px; background: white; color: #111827; cursor: pointer; }
+.results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
+.result-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 5px 18px rgba(15,23,42,.05); }
+.result-card h3 { font-size: 20px; margin: 10px 0 8px; }
+.result-card p { color: #475569; }
+.result-card .result-price { color: #0f172a; font-weight: 700; font-size: 20px; margin-bottom: 12px; }
+.result-rank { display: inline-block; background: #e0e7ff; color: #3730a3; border-radius: 999px; padding: 5px 11px; font-size: 12px; font-weight: 700; }
+.results-note { margin-top: 24px; color: #64748b; font-size: 13px; }
