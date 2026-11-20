@@ -923,6 +923,27 @@
 </footer>
 
 
+<script>
+(function () {
+    const overlay = document.getElementById("cookie-overlay");
+    const accept = document.getElementById("accept-cookies");
+    if (!overlay || !accept) return;
+
+    function dismiss() {
+        overlay.style.display = "none";
+        overlay.setAttribute("aria-hidden", "true");
+    }
+
+    if (document.cookie.split(";").some(part => part.trim() === "whichdevice_accepted=true")) {
+        dismiss();
+    }
+
+    accept.addEventListener("click", function () {
+        document.cookie = "whichdevice_accepted=true; Max-Age=2592000; Path=/; SameSite=Lax; Secure";
+        dismiss();
+    });
+})();
+</script>
 <script src="./javascript/script.js"></script>
 </body>
 </html>
