@@ -344,12 +344,3 @@ try {
 } catch (error) {
     /* storage not available: ignore */
 }
-/* Cookie acceptance */
-const cookieOverlay = document.getElementById("cookie-overlay");
-const acceptCookiesButton = document.getElementById("accept-cookies");
-function hasAcceptedCookies() { return document.cookie.split("; ").some(cookie => cookie === "whichdevice_accepted=true"); }
-if (hasAcceptedCookies()) { cookieOverlay.classList.add("hidden"); }
-acceptCookiesButton.addEventListener("click", () => {
-    document.cookie = "whichdevice_accepted=true; Max-Age=2592000; Path=/; SameSite=Lax; Secure";
-    cookieOverlay.classList.add("hidden");
-});
