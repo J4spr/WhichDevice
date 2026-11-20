@@ -590,3 +590,5 @@ footer {
 .cookie-disclaimer { font-size: 12px; opacity: .65; }
 #accept-cookies { background: #2563eb; color: white; border: 0; padding: 14px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; }
 #accept-cookies:hover { background: #1d4ed8; }
+
+.cookie-overlay[aria-hidden="true"] { display: none !important; }
