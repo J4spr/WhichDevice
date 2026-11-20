@@ -633,3 +633,9 @@ footer {
 .result-card .result-price { color: #0f172a; font-weight: 700; font-size: 20px; margin-bottom: 12px; }
 .result-rank { display: inline-block; background: #e0e7ff; color: #3730a3; border-radius: 999px; padding: 5px 11px; font-size: 12px; font-weight: 700; }
 .results-note { margin-top: 24px; color: #64748b; font-size: 13px; }
+
+/* Make the best recommendation stand out from two alternatives. */
+.result-card-best { grid-column: 1 / -1; border: 2px solid #2563eb; background: #eff6ff; box-shadow: 0 10px 30px rgba(37,99,235,.12); }
+.result-card-best h3 { font-size: clamp(23px, 3vw, 30px); }
+.result-card-best .result-rank { background: #1d4ed8; color: #fff; }
+.result-best-explanation { margin-top: 14px; font-weight: 600; }
