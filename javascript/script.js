@@ -292,15 +292,18 @@ document.querySelectorAll(
    FORM SUBMIT
 ========================= */
 
-document
-    .getElementById("phoneForm")
-    .addEventListener("submit", function(event) {
+document.getElementById("phoneForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    showPhoneRecommendations();
+});
 
+// Bind directly as well: the last-step CTA must work even if form submission is suppressed.
+document.querySelectorAll(".find-btn").forEach(button => {
+    button.addEventListener("click", function(event) {
         event.preventDefault();
-
         showPhoneRecommendations();
-
     });
+});
 
 
 /* Start */
@@ -419,7 +422,7 @@ function showPhoneRecommendations() {
     });
     const matches = eligible.map(phone => phoneMatch(phone, answers))
         .sort((a, b) => b.score - a.score || a.min - b.min);
-    const top = matches.slice(0, 12);
+    const top = matches;
 
     resultsList.replaceChildren();
     if (top.length === 0) {
@@ -443,14 +446,16 @@ function showPhoneRecommendations() {
         card.append(rank, title, price, details);
         resultsList.appendChild(card);
     });
-    resultsSummary.textContent = "Showing " + top.length + " of " + eligible.length + " eligible phones from " + catalog.length + " catalog entries, ranked for your answers.";
+    resultsSummary.textContent = "Showing all " + top.length + " eligible phones from " + catalog.length + " catalog entries, ranked for your answers.";
     questionnaire.hidden = true;
     phoneResults.hidden = false;
+    phoneResults.style.display = "block";
     phoneResults.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 document.getElementById("edit-answers").addEventListener("click", () => {
     phoneResults.hidden = true;
+    phoneResults.style.display = "";
     questionnaire.hidden = false;
     currentStep = 0;
     showStep(currentStep);
