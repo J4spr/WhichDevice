@@ -6,6 +6,74 @@ let currentStep = 0;
 
 
 /* =========================
+   SAVE / RESTORE PROGRESS
+   (so a page reload, e.g. after changing
+   adblocker settings, doesn't lose answers)
+========================= */
+
+const STORAGE_KEY = "phoneFinderProgress";
+const ALL_INPUTS = 'input[type="radio"], input[type="checkbox"]';
+
+function saveProgress() {
+
+    try {
+
+        const answers = {};
+
+        document.querySelectorAll(ALL_INPUTS).forEach(input => {
+
+            if (input.checked) {
+
+                if (!answers[input.name]) {
+                    answers[input.name] = [];
+                }
+
+                answers[input.name].push(input.value);
+
+            }
+
+        });
+
+        sessionStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ step: currentStep, answers: answers })
+        );
+
+    } catch (error) {
+        /* storage not available: ignore */
+    }
+
+}
+
+function restoreProgress() {
+
+    try {
+
+        const saved =
+            JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+
+        if (!saved) return;
+
+        document.querySelectorAll(ALL_INPUTS).forEach(input => {
+
+            const values = saved.answers[input.name] || [];
+
+            input.checked = values.includes(input.value);
+
+        });
+
+        if (saved.step >= 0 && saved.step < steps.length) {
+            currentStep = saved.step;
+        }
+
+    } catch (error) {
+        /* nothing saved or unreadable: start fresh */
+    }
+
+}
+
+
+/* =========================
    SHOW STEP
 ========================= */
 
@@ -22,6 +90,8 @@ function showStep(index) {
 
 
     updateProgress();
+
+    saveProgress();
 
 
     window.scrollTo({
@@ -146,11 +216,28 @@ nextButtons.forEach(button => {
         removeError(current);
 
 
-        if (currentStep < steps.length - 1) {
+        /* Go to the next step (only after the adblock check passes) */
 
-            currentStep++;
+        const goNext = () => {
 
-            showStep(currentStep);
+            if (currentStep < steps.length - 1) {
+
+                currentStep++;
+
+                showStep(currentStep);
+
+            }
+
+        };
+
+
+        if (typeof window.adblockGate === "function") {
+
+            window.adblockGate(goNext);
+
+        } else {
+
+            goNext();   // adblock.js not loaded: behave as before
 
         }
 
@@ -194,6 +281,8 @@ document.querySelectorAll(
             input.closest(".step")
         );
 
+        saveProgress();
+
     });
 
 });
@@ -221,4 +310,37 @@ document
 
 /* Start */
 
+restoreProgress();
+
 showStep(currentStep);
+
+
+/* After the adblock "check again" reload: check again and continue if OK */
+
+try {
+
+    if (sessionStorage.getItem("adblockResume") === "1") {
+
+        sessionStorage.removeItem("adblockResume");
+
+        if (typeof window.adblockGate === "function") {
+
+            window.adblockGate(() => {
+
+                if (currentStep < steps.length - 1) {
+
+                    currentStep++;
+
+                    showStep(currentStep);
+
+                }
+
+            });
+
+        }
+
+    }
+
+} catch (error) {
+    /* storage not available: ignore */
+}
