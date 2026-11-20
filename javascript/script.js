@@ -419,7 +419,7 @@ function showPhoneRecommendations() {
     });
     const matches = eligible.map(phone => phoneMatch(phone, answers))
         .sort((a, b) => b.score - a.score || a.min - b.min);
-    const top = matches.slice(0, 12);
+    const top = matches.slice(0, 3);
 
     resultsList.replaceChildren();
     if (top.length === 0) {
@@ -429,7 +429,7 @@ function showPhoneRecommendations() {
     }
     top.forEach((phone, index) => {
         const card = document.createElement("article");
-        card.className = "result-card";
+        card.className = index === 0 ? "result-card result-card-best" : "result-card";
         const title = document.createElement("h3");
         title.textContent = phone.name;
         const price = document.createElement("p");
@@ -437,13 +437,19 @@ function showPhoneRecommendations() {
         price.textContent = phone.min === phone.max ? "Around €" + phone.min : "€" + phone.min + "–€" + phone.max;
         const rank = document.createElement("span");
         rank.className = "result-rank";
-        rank.textContent = index === 0 ? "Best match" : "Match #" + (index + 1);
+        rank.textContent = index === 0 ? "★ Our top recommendation" : "Alternative #" + index;
         const details = document.createElement("p");
         details.textContent = phone.reasons.length ? phone.reasons.join(" · ") : "Matches your budget and OS preferences";
         card.append(rank, title, price, details);
+        if (index === 0) {
+            const explanation = document.createElement("p");
+            explanation.className = "result-best-explanation";
+            explanation.textContent = "This phone scored highest for your answers among the models within your budget and OS preference.";
+            card.appendChild(explanation);
+        }
         resultsList.appendChild(card);
     });
-    resultsSummary.textContent = "Showing " + top.length + " of " + eligible.length + " eligible phones from " + catalog.length + " catalog entries, ranked for your answers.";
+    resultsSummary.textContent = top.length ? "We picked your best match" + (top.length > 1 ? " and " + (top.length - 1) + " alternative" + (top.length > 2 ? "s" : "") : "") + " from " + eligible.length + " eligible phones." : "No matching phones found. Change your budget or OS preference to see recommendations.";
     questionnaire.hidden = true;
     phoneResults.hidden = false;
     phoneResults.scrollIntoView({ behavior: "smooth", block: "start" });
